@@ -1,0 +1,274 @@
+%%%%%%%%%%%%%%%%%
+% This is an example CV created using altacv.cls (v1.6.2, 28 Aug 2021) written by
+% LianTze Lim (liantze@gmail.com), based on the
+% Cv created by BusinessInsider at http://www.businessinsider.my/a-sample-resume-for-marissa-mayer-2016-7/?r=US&IR=T
+%
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%%%%%%%%%%%%%%%
+
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% \documentclass[10pt,a4paper,normalphoto]{altacv}
+
+\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+
+%% AltaCV uses the fontawesome5 package.
+%% See http://texdoc.net/pkg/fontawesome5 for full list of symbols.
+
+% Change the page layout if you need to
+\geometry{left=1cm,right=1cm,top=0.6cm,bottom=0.6cm,,columnsep=0.6cm}
+
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+\ifxetexorluatex
+  % If using xelatex or lualatex:
+  \setmainfont{Lato}
+\else
+  % If using pdflatex:
+  \usepackage[default]{lato}
+\fi
+
+% Change the colours if you want to
+\definecolor{Blue}{HTML}{327FEB}
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+% \colorlet{name}{black}
+\colorlet{tagline}{Blue}
+\colorlet{heading}{Blue}
+\colorlet{headingrule}{Blue}
+% \colorlet{subheading}{PastelRed}
+\colorlet{accent}{Blue}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+% Change some fonts, if necessary
+% \renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+% \renewcommand{\personalinfofont}{\footnotesize}
+% \renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+% \renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+%% Use (and optionally edit if necessary) this .cfg if you
+%% want to use an author-year reference style like APA(6)
+%% for your publication list
+\input{pubs-authoryear}
+
+%% Use (and optionally edit if necessary) this .cfg if you
+%% want an originally numerical reference style like IEEE
+%% for your publication list
+% \input{pubs-num.cfg}
+
+%% sample.bib contains your publications
+\addbibresource{sample.bib}
+
+\begin{document}
+\name{Shashwat M. Das}
+\tagline{Software Engineer \& Proud Geek}
+% Cropped to square from https://en.wikipedia.org/wiki/Maria_Mayer#/media/File:Marissa_Mayer_May_2014_(cropped).jpg, CC-BY 2.0
+%% You can add multiple photos on the left or right
+\photoR{2.5cm}{shash.jpg}
+% \photoL{2cm}{Yacht_High,Suitcase_High}
+\personalinfo{%
+  % Not all of these are required!
+  % You can add your own with \printinfo{symbol}{detail}
+  \email{shashwatmd.iitkgp@gmail.com}
+  \phone{(+91) 9609942333}
+  \mailaddress{Noida, Uttar Pradesh, India, 201307}
+  \homepage{shashwatmdas.me}
+  \github{@ShashwatMDas}
+  \linkedin{linkedin.com/in/shashwat-m-das-92bb8b156/}
+%   \github{github.com/mmayer} % I'm just making this up though.
+%   \orcid{0000-0000-0000-0000} % Obviously making this up too.
+  %% You can add your own arbitrary detail with
+  %% \printinfo{symbol}{detail}[optional hyperlink prefix]
+  % \printinfo{\faPaw}{Hey ho!}
+  %% Or you can declare your own field with
+  %% \NewInfoFiled{fieldname}{symbol}[optional hyperlink prefix] and use it:
+  % \NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
+  % \gitlab{your_id}
+	%%
+  %% For services and platforms like Mastodon where there isn't a
+  %% straightforward relation between the user ID/nickname and the hyperlink,
+  %% you can use \printinfo directly e.g.
+  % \printinfo{\faMastodon}{@username@instace}[https://instance.url/@username]
+  %% But if you absolutely want to create new dedicated info fields for
+  %% such platforms, then use \NewInfoField* with a star:
+  % \NewInfoField*{mastodon}{\faMastodon}
+  %% then you can use \mastodon, with TWO arguments where the 2nd argument is
+  %% the full hyperlink.
+  % \mastodon{@username@instance}{https://instance.url/@username}
+}
+
+\makecvheader
+
+%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+\AtBeginEnvironment{itemize}{\small}
+
+%% Set the left/right column width ratio to 6:4.
+\columnratio{0.6}
+
+% Start a 2-column paracol. Both the left and right columns will automatically
+% break across pages if things get too long.
+\begin{paracol}{2}
+
+\cvsection{Work Experience}
+
+\cvevent{Software Development Intern | \textcolor{tagline}{Krate}}{}{Oct 2021 --  Present}{WFH}
+
+\begin{itemize}
+\item Developed the cross-platform childcare application using React Native
+\item Built the backend using {\bf GraphQL} and AWS services like SES, S3, etc., implemented ElastiCache, reducing fetching time by upto {\bf 60\%} for various APIs
+\item Integrated {\bf Twilio WebRTC} for video calling feature and {\bf Firebase} for chat
+\item Revamped and built a {\bf horizontally scalable} server architecture using {\bf Elastic Beanstalk} and a {\bf CI/CD pipeline using CircleCI} and CodeDeploy decreasing deploy time by {\bf 80\%} and server down time by {\bf 90\%} 
+\end{itemize}
+
+\divider\smallskip
+
+\cvevent{Software Developer Intern | \textcolor{tagline}{MTX Group (MavQ)}}{}{May 2021 -- July 2021}{Hyderabad}
+\begin{itemize}
+\item Built a Slack Bot and slack notification service using {\bf Spring Boot, Kafka and MongoDB} with automated messaging system decreasing response time of support team by {\bf 40\%} and engagement by around {\bf 20\%}
+\item Built a common reusable components library {\bf AngularJS and Typescript} which is being used in {\bf 5} different projects
+\item Built an listener-processor architecture to process heavy API calls asynchronously using Spring Boot and Kafka
+\end{itemize}
+
+\divider\smallskip
+
+\cvevent{Co-Lead Software Engineer | \textcolor{tagline}{Genio Social Network}}{}{Sept 2020 -- April 2021}{WFH}
+
+\begin{itemize}
+\item Built a social network application in {\bf React Native(Typescript) \& Flask}
+\item Built the user authentication and storage system using {\bf Linkedin OAuth, OTP(AWS SNS), Email(AWS SES), and a NoSQL graph database Neo4j}
+\item Built the backend {\bf microservice architecture}, with each microservice consisting of a dockerised Flask application. The microservice architecture was deployed and managed using {\bf Kuberenetes(GKE)}
+\item Built a cloud storage \& CDN service in the application (FE+BE) to store user specific assets using {\bf AWS S3, CloudFront \& Lambda}
+\item Built an image and video {\bf compression asynchronous processor} architecture reducing media size by upto {\bf 80\% }
+\end{itemize}
+
+\divider\smallskip
+
+\cvevent{Backend Engineering Intern | \textcolor{tagline}{Wingify (VWO)}}{}{Jan 2021 -- March 2021}{New Delhi}
+\begin{itemize}
+\item Developed an {\bf npm package} (ReactJs) and a {\bf Gatsby Plugin} respectively, to integrate VWO(vwo.com) smartcode directly into the application
+\item Created {\bf cron jobs} to constantly optimize production MySQL table size, which reduced the everyday data size by around {\bf 35\%}
+\item Changed the backend APIs to save heavy data in compressed format ( GZIP encoding ) reducing size by {\bf40\%} and decoding data when needed
+\item Handled the backend, created APIs, and updated old APIs, for Event Archi-
+tecture deployment from VWO editor in PHP and MySQL
+\end{itemize}
+
+\divider\smallskip
+
+\cvevent{Software Development Intern | \textcolor{tagline}{Reason Solutions}}{}{June 2020 --  Dec 2020}{WFH}
+
+\begin{itemize}
+\item Developed a cross-platform app, for customer use using React Native being actively used in {\bf 2 countries}, namely Trinidad and Tobago, Malawi
+\item Developed and integrated various APIs like payment, tracking, service renewal, customer support, etc using AWS
+\end{itemize}
+
+% \divider
+
+% \cvevent{Product Engineer}{Google}{23 June 1999 -- 2001}{Palo Alto, CA}
+
+% \begin{itemize}
+% \item Joined the company as employe \#20 and female employee \#1
+% \item Developed targeted advertisement in order to use user's search queries and show them related ads
+% \end{itemize}
+
+% \cvsection{Languages}
+
+% \cvskill{English}{5}
+% % \divider
+
+% \cvskill{Hindi}{5}
+
+
+
+
+% Adapted from @Jake's answer from http://tex.stackexchange.com/a/82729/226
+% \wheelchart{outer radius}{inner radius}{
+% comma-separated list of value/text width/color/detail}
+% Some ad-hoc tweaking to adjust the labels so that they don't overlap
+\hspace*{-1em}  %% quick hack to move the wheelchart a bit left
+
+
+% use ONLY \newpage if you want to force a page break for
+% ONLY the currentc column
+
+%% Switch to the right column. This will now automatically move to the second
+%% page if the content is too long.
+\switchcolumn
+
+
+\cvsection{Responsibilities}
+
+
+\cvevent{}{Senior Manager |  E-Cell IIT Kharagpur}{}{}
+
+\begin{itemize}
+\item Head of Software Development team of Entrepreneurship Cell, IIT Kharagpur, directly supervising a team of {\bf 10 Developers}
+\item Led the team for the development of KGP Startup Community website and Internship Portal, while solely developed the complete backend in {\bf Django}
+\end{itemize}
+\cvsection{Skills}
+
+{\bf Programming Languages:} 
+C/C++ | Python | Javascript | TypeScript | PHP | Java | Golang | Solidity | Rust
+\linebreak
+{\bf Cloud Services:} 
+Google Cloud | AWS | Firebase
+\linebreak
+{\bf Frameworks/Libraries:} 
+Django | Flask | NodeJS | Spring Boot | Gin(Golang) | GraphQL | ReactJS | React Native | Redux | C++ STL | Web3.js
+\linebreak
+{\bf DBMS/Softwares:} 
+MySQL | PostgreSQL | MongoDB | Neo4j | Firestore | DynamoDB
+\linebreak
+{\bf Others:} 
+Kubernetes | Docker | Redis | Kafka | Terraform | Linux | Ethereum | Solana Blockchain
+
+
+
+
+
+
+\cvsection{Education}
+
+\cvevent{BTech\ in Biotechnology}{Indian Institute of Technology(IIT), Kharagpur}{July 2018 -- May 2022}{}
+
+\cvsection{Projects}
+
+
+\cvevent{}{DevOps+Software Engineer |  Divvy.bet}{}{}
+
+\begin{itemize}
+\item Built {\bf terraform} Architecture as Code, for GCP Compute configuring firewall, VPC, Load-Balancers and Auto Scaling with maximum of 10 VMs
+\item Built backend APIs using {\bf Gin(Golang)} framework.
+\item Wrote {\bf web3 functions} in Reactjs applications to interact with smart contracts.
+\end{itemize}
+
+\cvevent{}{Personal Portfolio}{}{}
+
+\begin{itemize}
+\item Built a {\bf ReactJS} based portfolio site and deployed it custom built using CI/CD system using {\bf Github Webhooks, NodeJS, and shell scripts}.
+\item Used {\bf Apache 2.0} to serve the static files of the website and {\bf OpenSSL} to create a self-signed SSL certificate allowing HTTPS connections.
+\end{itemize}
+
+\cvsection{Referees}
+
+% \cvref{name}{email}{mailing address}
+\cvref{Piyush Mayank}{Senior Product Manager, Flipkart}{piyush.mayank1@gmail.com} 
+\phone{(+91) 8861024466}
+
+\end{paracol}
+
+\end{document}
